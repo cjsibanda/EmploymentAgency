@@ -44,3 +44,22 @@ const defaultEmployee: EmployeeData = {
     imageUrl: "https://anesusibanda.com",   
 };
 
+////<<---- *** --------->>/////
+export const EmployeeProfile = () => {
+    const [employee, setemployee] = useState<EmployeeData>(defaultEmployee);
+
+    useEffect(() => {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(player));
+        } catch (error) {
+            console.log("Failed to save employee data:", error);
+        }
+    }, [player]);
+
+    return (
+        <div>
+            <header></header>
+            <main></main>
+        </div>
+    )
+}
