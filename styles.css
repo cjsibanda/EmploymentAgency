@@ -11,6 +11,27 @@ body {
 }
 
 .header {
-    background-color: #1b1b32;
+    background-color: black;
     border-bottom: 3px solid #f1be32;
 }
+
+.header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px 24px;
+}
+
+.header-title {
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #f1be32;
+}
+
+.header-subtitle {
+    font-size: 12px;
+    color: #99c9ff;
+    margin-top: 2px;
+}
+
