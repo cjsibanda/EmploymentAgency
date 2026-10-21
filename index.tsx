@@ -73,5 +73,12 @@ export const EmployeeProfile = () => {
             <header></header>
             <main></main>
         </div>
-    )
+    );
+};
+
+// To mount the React app to the DOM
+const rootElement = document.getElementById("root");
+if (rootElement) {
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<EmployeeProfile />);
 }
