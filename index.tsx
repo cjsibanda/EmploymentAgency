@@ -17,11 +17,12 @@ interface EmployeeData {
     employeeID: number;
     jobTitle: JobTitle;
     imageUrl: string;
+    parkingLevel: number;
 }
 
 const STORAGE_KEY = "employee_profile";
 
-//<<--- **** ------>>//
+//<<--- ****? ------>>//
 export function getParkingArea(level: number): string {
     if (level == 1) return "GreenZone";
     if (level == 2) return "BlueZone";
@@ -29,32 +30,43 @@ export function getParkingArea(level: number): string {
     return "YellowZone";
 }
 
-export const EmployeeProfile = ({ employee }: { employee: EmployeeData }) => {
-    return (
-        <div>
-
-        </div>
-    );
-};
-
 const defaultEmployee: EmployeeData = {
     name: "CJ Sibanda",
     employeeID: 102012,
-    jobTitle: "greeter",
-    imageUrl: "https://anesusibanda.com",   
+    jobTitle: "Greeter",
+    imageUrl: "https://anesusibanda.com", 
+    parkingLevel: 1,  
 };
+
 
 ////<<---- *** --------->>/////
 export const EmployeeProfile = () => {
-    const [employee, setemployee] = useState<EmployeeData>(defaultEmployee);
+    const [employee, setEmployee] = useState<EmployeeData>(() => {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) return JSON.parse(saved);
+        } catch (e) {
+            console.log("Failed to load saved profile:", e);
+        }
+        return defaultEmployee;
+    });
 
+    const [isEditing, setIsEditing] = useState(false);
+    const [tempData, setTempData] = useState<EmployeeData>(employee);
+    
     useEffect(() => {
         try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(player));
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(employee));
         } catch (error) {
             console.log("Failed to save employee data:", error);
         }
-    }, [player]);
+    }, [employee]);
+
+    const handleSave = (e: React.FormEvent) => {
+        e.preventDefault();
+        setEmployee(tempData);
+        setIsEditing(false);
+    };
 
     return (
         <div>
