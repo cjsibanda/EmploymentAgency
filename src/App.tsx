@@ -60,13 +60,31 @@ export const App = () => {
     }
   }, [employee]);
 
-  const handleSave = (e: React.FormEvent) => {
+  const handleSave = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setEmployee(tempData);
     setIsEditing(false);
   };
 
-  
+  return (
+    <div className="page">
+      <header className="header">
+        <div className="header-inner">
+          <div className="header-title">
+            Sibanda Employment Agency
+          </div>
+          <div className="header-subtitle">
+            Candidate Registration & Onboarding Portal
+          </div>
+        </div>
+      </header>
+      <main>
+        
+      </main>
+    </div>
+  )
+
+
 }
 
 
