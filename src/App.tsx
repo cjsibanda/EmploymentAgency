@@ -78,8 +78,37 @@ export const App = () => {
           </div>
         </div>
       </header>
-      <main>
-        
+      <main className="main-content">
+        <div className="card">
+          <h2>
+            Employee Sign-Up Profile
+          </h2>
+          {!isEditing ? (
+            <div>
+              <div><strong>Name:</strong> {employee.employeeID}</div>
+              <div><strong>Employee ID:</strong> {employee.employeeID}</div>
+              <div><strong>Job Title</strong {employee.jobTitle}</div>
+              <div><strong>Assigned Parking:</strong> {getParkingArea(employee.parkingLevel)}(Level {employee.parkingLevel})</div>
+              <div><strong>Portfolio:</strong><a href={employee.imageUrl} target="_blank" rel="noreferrer">{employee.imageUrl}</a></div>
+
+              <button className="btn" onClick={() => { setTempData(employee); setIsEditing(true); }}>
+                Edit Profile
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSave} className="form">
+              <div>
+                <label>Full Name:</label>
+                <input
+                  type="text"
+                  value={tempData.name}
+                  onChange={(e) => setTempData({...tempData, name: e.target.value})}
+                  required
+                />
+              </div>
+            </form>
+          )}
+        </div>
       </main>
     </div>
   )
