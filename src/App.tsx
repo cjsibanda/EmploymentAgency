@@ -31,7 +31,7 @@ export function getParkingArea(level: number): string {
 
 const defaultEmployee: EmployeeData = {
   name: "CJ Sibanda",
-  employeeID: 102012,
+  employeeID: 102014,
   jobTitle: "Greeter",
   imageUrl: "https://anesibanda.com",
   parkingLevel: 1,
@@ -43,7 +43,7 @@ export const App = () => {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) return JSON.parse(saved);
     } catch (e) {
-      console.log("Failed to load saved profile:", e);
+      console.log("Failed to load the saved profile:", e);
     }
     return defaultEmployee;
   });
