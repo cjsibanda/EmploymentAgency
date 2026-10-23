@@ -3,7 +3,6 @@ import './styles.css';
 
 const JOB_TITLES = [
   "Gatekeeper",
-  "Shut-in",
   "Media Technician",
   "Security",
   "Custodian",
