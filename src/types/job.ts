@@ -8,19 +8,26 @@
 * ... Employment Types (Full-time, Remote, Contract)
 * Search Query Filters
 ********************************************************/
-export type EmploymentType = "FULL_TIME" | 'PART_TIME' | 'CONTRACT' | 'REMOTE';
+export type EmploymentType = 'FULL_TIME' | 'PART_TIME' | 'CONTRACT' | 'REMOTE';
 
 export interface JobPosting {
-    id: string;
-    title: string;
-    companyName: string;
-    location: string;
-    type: EmploymentType;
-    salaryMin: number;
-    salaryMax: number;
-    currency: string;
-    description: string;
-    requirements: string[];
-    postedDate: string;
-    isReatured?: boolean;
+  id: string;
+  title: string;
+  companyName: string;
+  location: string;
+  type: EmploymentType;
+  salaryMin: number;
+  salaryMax: number;
+  currency: string;
+  description: string;
+  requirements: string[];
+  postedDate: string;
+  isFeatured?: boolean;
+}
+
+export interface JobFilterParams {
+  searchTerm: string;
+  location: string;
+  type?: EmploymentType | 'ALL';
+  minSalary?: number;
 }
