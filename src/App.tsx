@@ -10,6 +10,7 @@ import { defaultEmployee, STORAGE_KEY } from './data/defaultEmployee';
 import { Header } from './components/Header';
 import { ProfileView } from './components/ProfileView';
 import { ProfileForm } from './components/ProfileForm';
+import { Footer } from './components/Footer'; 
 import './styles.css';
 
 export const App: React.FC = () => {
@@ -72,6 +73,7 @@ export const App: React.FC = () => {
                     )}
                 </div>
             </main>
+            <Footer /> {/* Renders Footer */}
         </div>
     );
 };
