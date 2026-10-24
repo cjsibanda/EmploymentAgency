@@ -5,7 +5,7 @@
 *  for read-only display of candidate/employee details
 ********************************************************/
 import React from 'react';
-import { EmployeeData } from '../types/employee';
+import type { EmployeeData } from '../types/employee';
 import { getParkingArea } from '../utils/parking';
 
 interface ProfileViewProps {

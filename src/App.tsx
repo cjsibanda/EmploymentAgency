@@ -5,7 +5,7 @@
 *  Connects local storage persistence using React hooks
 ********************************************************/
 import React, { useState, useEffect } from 'react';
-import { EmployeeData } from './types/employee';
+import type { EmployeeData } from './types/employee';
 import { defaultEmployee, STORAGE_KEY } from './data/defaultEmployee';
 import { Header } from './components/Header';
 import { ProfileView } from './components/ProfileView';

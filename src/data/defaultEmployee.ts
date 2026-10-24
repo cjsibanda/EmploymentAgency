@@ -2,7 +2,7 @@
 *  defaultEmployee.ts: for baseline data and local storage
 ***********************************************************/
 
-import { EmployeeData } from '../types/employee';
+import type { EmployeeData } from '../types/employee';
 
 export const STORAGE_KEY = "employee_profile";
 

@@ -5,7 +5,8 @@
 *  for editable form controls with type safety
 ********************************************************/
 import React from 'react';
-import { EmployeeData, JOB_TITLES, JobTitle } from '../types/employee';
+import { JOB_TITLES } from '../types/employee';
+import type { EmployeeData, JobTitle } from '../types/employee';
 import { getParkingArea } from '../utils/parking';
 
 interface ProfileFormProps {
