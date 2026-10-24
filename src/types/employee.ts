@@ -10,3 +10,10 @@ export const JOB_TITLES = [
 
 export type JobTitle = typeof JOB_TITLES[number];
 
+export interface EmployeeData {
+    name: string;
+    employeeID: number;
+    jobTitle: JobTitle;
+    imageUrl: string;
+    parkingLevel: number;
+}
