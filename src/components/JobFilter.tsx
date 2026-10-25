@@ -14,3 +14,25 @@ interface JobFilterProps {
     onReset: () => void;
 }
 
+export const JobFilter: React.FC<JobFilterProps> = ({ filters, onFilterChange, onReset }) => {
+    return (
+        <div>
+            <h3>
+                Search Open Positions
+            </h3>
+            <div>
+                {/* Search Input */}
+                <div>
+                    <label>Keyword Search:</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Senior Chef, Engineer..."
+                      value={filters.searchTerm}
+                      onChange={(e) => onFilterChange({ ...filters, searchTerm: e.target.value})}
+                    />
+                </div>
+
+            </div>
+        </div>
+    )
+}
