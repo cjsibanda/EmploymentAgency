@@ -16,10 +16,10 @@ export const mockJobs: JobPosting[] = [
         salaryMin: 60000,
         salaryMax: 150000,
         currency: 'CAD',
-        description: 'Cooking good food in the Kitchen and supervising Junior cooks',
+        description: 'Cooking good food in the kitchen and supervising junior cooks',
         requirements: [
-            '5+ years experience in fact paced restaurant',
-            'Solid understand on knives and stoves',
+            '5+ years experience in fast paced restaurant',
+            'Solid understanding og knives and stoves',
             'Ability to stand and walk for long shifts'
         ],
         postedDate: '2026-10-20',
