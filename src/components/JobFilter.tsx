@@ -65,7 +65,12 @@ export const JobFilter: React.FC<JobFilterProps> = ({ filters, onFilterChange, o
             </div>
 
             <div>
-                
+                <button
+                  type="button"
+                  onClick={onReset}
+                >
+                    Reset Filters
+                </button>
             </div>
         </div>
     )
