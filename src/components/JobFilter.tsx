@@ -6,7 +6,7 @@
 * ... up to the parent container
 *************************************************************/
 import React from "react";
-import type { JobFilterParams } from "../types/job";
+import type { EmploymentType, JobFilterParams } from "../types/job";
 
 interface JobFilterProps {
     filters: JobFilterParams;
@@ -42,6 +42,30 @@ export const JobFilter: React.FC<JobFilterProps> = ({ filters, onFilterChange, o
                       onChange={(e) => onFilterChange({ ...filters, location: e.target.value })}
                     />
                 </div>
+
+                {/* Employment Type Dropdown */}
+                <div>
+                    <label>Employment Type:</label>
+                    <select
+                      value={filters.type || 'ALL'}
+                      onChange={(e) => 
+                        onFilterChange({
+                            ...filters,
+                            type: e.target.value as EmploymentType | 'ALL',
+                        })
+                      }
+                    >
+                        <option value="ALL">All Employment Types</option>
+                        <option value="FULL">Full-Time</option>
+                        <option value="REMOTE">Remote</option>
+                        <option value="CONTRACT">Contract</option>
+                        <option value="PART_TIME">Part-time</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                
             </div>
         </div>
     )
