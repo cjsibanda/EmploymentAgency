@@ -31,7 +31,17 @@ export const JobFilter: React.FC<JobFilterProps> = ({ filters, onFilterChange, o
                       onChange={(e) => onFilterChange({ ...filters, searchTerm: e.target.value})}
                     />
                 </div>
-
+                
+                {/* Location Filter */}
+                <div className="form-group">
+                    <label>Location:</label>
+                    <input 
+                      type="text"
+                      placeholder="e.g. Calgary, Remote..."
+                      value={filters.location}
+                      onChange={(e) => onFilterChange({ ...filters, location: e.target.value })}
+                    />
+                </div>
             </div>
         </div>
     )
