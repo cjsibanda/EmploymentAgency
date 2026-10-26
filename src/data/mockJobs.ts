@@ -78,5 +78,23 @@ export const mockJobs: JobPosting[] = [
     ],
     postedDate: '2026-10-25',
     isFeatured: false,
+  },
+  {
+    id: 'job-105',
+    title: 'Customer Service',
+    companyName: 'Falls Station',
+    location: 'Pickering, ON',
+    type: 'FULL_TIME',
+    salaryMin: 40000,
+    salaryMax: 100000,
+    currency: 'CAD',
+    description: 'Assist customers with queries',
+    requirements: [
+      'Experience working in high paced environment',
+      'Experience with Microsoft Office',
+      'Team player'
+    ],
+    postedDate: '2026-10-26',
+    isFeatured: false,
   }
 ]
