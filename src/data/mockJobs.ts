@@ -81,12 +81,12 @@ export const mockJobs: JobPosting[] = [
   },
   {
     id: 'job-105',
-    title: 'Customer Service',
+    title: 'Customer Service Representative',
     companyName: 'Falls Station',
     location: 'Pickering, ON',
     type: 'FULL_TIME',
     salaryMin: 40000,
-    salaryMax: 100000,
+    salaryMax: 90000,
     currency: 'CAD',
     description: 'Assist customers with queries',
     requirements: [
