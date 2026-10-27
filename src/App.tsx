@@ -76,6 +76,7 @@ export const App: React.FC = () => {
         });
     }, [filters]);
 
+
     const handleEditClick = () => {
         setTempData(employee);
         setIsEditing(true);
@@ -89,6 +90,10 @@ export const App: React.FC = () => {
 
     const handleCancel = () => {
         setIsEditing(false);
+    };
+
+    const handleApply = (job: JobPosting) => {
+        alert(`Application submitted successfully for ${job.title} at ${job.companyName}!`);
     };
 
     return (
