@@ -1,15 +1,19 @@
 /*******************************************************
-*  CJ 10/24/26
+*  CJ 10/27/26
 *  App.tsx - 
 *  Assmbles modular components
 *  Connects local storage persistence using React hooks
 ********************************************************/
 import React, { useState, useEffect } from 'react';
 import type { EmployeeData } from './types/employee';
+import type { JobPosting, JobFilterParams} from './types/job'; 
 import { defaultEmployee, STORAGE_KEY } from './data/defaultEmployee';
+import { mockJobs } from './data/mockJobs';
 import { Header } from './components/Header';
 import { ProfileView } from './components/ProfileView';
 import { ProfileForm } from './components/ProfileForm';
+import { JobFilter } from './components/JobFilter';
+import { JobList } from './components/JobList'; 
 import { Footer } from './components/Footer'; 
 import './styles.css';
 
