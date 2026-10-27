@@ -17,6 +17,14 @@ import { JobList } from './components/JobList';
 import { Footer } from './components/Footer'; 
 import './styles.css';
 
+type ActiveTab = 'PROFILE' | 'JOBS'; 
+
+const initialFilters: JobFilterParams = {
+    searchTerm: '',
+    location: '',
+    type: 'ALL',
+};
+
 export const App: React.FC = () => {
     // Lazy initial state load from LocalStorage
     const [employee, setEmployee] = useState<EmployeeData>(() => {
