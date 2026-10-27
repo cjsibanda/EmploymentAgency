@@ -72,9 +72,9 @@ export const App: React.FC = () => {
             const matchesType =
               !filters.type || filters.type === 'ALL' || job.type === filters.type;
 
-              
-        })
-    })
+            return matchesSearch && matchesLocation && matchesType;
+        });
+    }, [filters]);
 
     const handleEditClick = () => {
         setTempData(employee);
