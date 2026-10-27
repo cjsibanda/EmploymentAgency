@@ -67,6 +67,12 @@ export const App: React.FC = () => {
             const matchesLocation = 
               filters.location === '' ||
               job.location.toLowerCase().includes(filters.location.toLowerCase());
+
+            //Type matching
+            const matchesType =
+              !filters.type || filters.type === 'ALL' || job.type === filters.type;
+
+              
         })
     })
 
