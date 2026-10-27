@@ -43,7 +43,7 @@ export const App: React.FC = () => {
     const [isEditing, setIsEditing] = useState<boolean>(false);
     const [tempData, setTempData] = useState<EmployeeData>(employee);
 
-    // Sync state to LocalStorage on change
+    
     useEffect(() => {
         try {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(employee));
@@ -52,7 +52,20 @@ export const App: React.FC = () => {
         }
     }, [employee]);
 
-    
+    // Job Board Filtering State
+    const [filters, setFilters] = useState<JobFilterParams>(initialFilters);
+
+    const filteredJobs = useMemo(() => {
+        return mockJobs.filter((job) => {
+            //Searching for term matching (Title or Description)
+            const matchesSearch =
+              filters.searchTerm === '' ||
+              job.title.toLowerCase().includes(filters.searchTerm.toLowerCase()) ||
+              job.description.toLowerCase().includes(filters.searchTerm.toLowerCase());
+
+            
+        })
+    })
 
     const handleEditClick = () => {
         setTempData(employee);
