@@ -26,7 +26,10 @@ const initialFilters: JobFilterParams = {
 };
 
 export const App: React.FC = () => {
-    // Lazy initial state load from LocalStorage
+    //Tab Navigation State
+    const [activeTab, setActiveTab] = useState<ActiveTab>('JOBS');
+
+    //Profile State & Persistence
     const [employee, setEmployee] = useState<EmployeeData>(() => {
         try {
             const saved = localStorage.getItem(STORAGE_KEY);
@@ -48,6 +51,8 @@ export const App: React.FC = () => {
             console.error("Failed to save employee data:", error);
         }
     }, [employee]);
+
+    
 
     const handleEditClick = () => {
         setTempData(employee);
