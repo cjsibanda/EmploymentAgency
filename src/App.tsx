@@ -123,22 +123,36 @@ export const App: React.FC = () => {
             </nav>
 
             <main className="main-content">
-                <div className="card">
-                    <h2>Employee Sign-Up Profile</h2>
-                    {!isEditing ? (
-                        <ProfileView 
-                            employee={employee} 
-                            onEdit={handleEditClick} 
-                        />
-                    ) : (
-                        <ProfileForm 
-                            tempData={tempData} 
-                            setTempData={setTempData} 
-                            onSave={handleSave} 
-                            onCancel={handleCancel} 
-                        />
-                    )}
-                </div>
+                {activeTab === 'PROFILE' ? (
+                  <div className="card">
+                      <h2>Employee Sign-Up Profile</h2>
+                      {!isEditing ? (
+                          <ProfileView 
+                              employee={employee} 
+                              onEdit={handleEditClick} 
+                          />
+                      ) : (
+                          <ProfileForm 
+                              tempData={tempData} 
+                              setTempData={setTempData} 
+                              onSave={handleSave} 
+                              onCancel={handleCancel} 
+                          />
+                      )}
+                  </div>
+                ) : (
+                  <div>
+                    <JobFilter
+                      filters={filters}
+                      onFilterChange={setFilters}
+                      onReset={handleResetFilters}
+                    />
+                    <div>
+                        Showing <strong>{filteredJobs.length}</strong> of <strong>{mockJobs.length}</strong> positions                
+                    </div>
+                    <JobList jobs={filteredJobs} onApply={handleApply}/>
+                  </div>
+                )}
             </main>
 
             <Footer /> 
