@@ -63,7 +63,10 @@ export const App: React.FC = () => {
               job.title.toLowerCase().includes(filters.searchTerm.toLowerCase()) ||
               job.description.toLowerCase().includes(filters.searchTerm.toLowerCase());
 
-            
+            //Location matches
+            const matchesLocation = 
+              filters.location === '' ||
+              job.location.toLowerCase().includes(filters.location.toLowerCase());
         })
     })
 

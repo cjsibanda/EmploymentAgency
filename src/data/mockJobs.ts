@@ -19,7 +19,7 @@ export const mockJobs: JobPosting[] = [
         description: 'Cooking good food in the kitchen and supervising junior cooks',
         requirements: [
             '5+ years experience in fast paced restaurant',
-            'Solid understanding og knives and stoves',
+            'Solid understanding of knives and stoves',
             'Ability to stand and walk for long shifts'
         ],
         postedDate: '2026-10-20',
