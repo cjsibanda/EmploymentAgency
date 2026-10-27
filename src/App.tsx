@@ -96,6 +96,10 @@ export const App: React.FC = () => {
         alert(`Application submitted successfully for ${job.title} at ${job.companyName}!`);
     };
 
+    const handleResetFilters = () => {
+        setFilters(initialFilters);
+    };
+
     return (
         <div className="page">
             <Header />
