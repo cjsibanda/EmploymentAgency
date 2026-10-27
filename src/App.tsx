@@ -103,6 +103,25 @@ export const App: React.FC = () => {
     return (
         <div className="page">
             <Header />
+
+            {/* Navigation Sub-Header / Tabs */}
+            <nav>
+                <div>
+                    <button
+                      className={`btn ${activeTab === 'JOBS' ? 'btn-primary' : 'btn-secondary'}`}
+                      onClick={() => setActiveTab('JOBS')}
+                    >
+                        Explore Jobs ({mockJobs.length})
+                    </button>
+                    <button
+                      className={`btn ${activeTab === 'PROFILE' ? 'btn-primary' : 'btn-secondary'}`}
+                      onClick={() => activeTab('PROFILE')}
+                    >
+                        Candiate Portal
+                    </button>
+                </div>
+            </nav>
+
             <main className="main-content">
                 <div className="card">
                     <h2>Employee Sign-Up Profile</h2>
@@ -121,7 +140,8 @@ export const App: React.FC = () => {
                     )}
                 </div>
             </main>
-            <Footer /> {/* Renders Footer */}
+
+            <Footer /> 
         </div>
     );
 };
