@@ -1,6 +1,5 @@
 export const JOB_TITLES = [
     "Gatekeeper",
-    "Shut-in",
     "Media Technician",
     "Security",
     "Custodian",

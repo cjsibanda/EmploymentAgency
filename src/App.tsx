@@ -1,10 +1,10 @@
 /*******************************************************
-*  CJ 10/27/26
+*  CJ 10/28/26
 *  App.tsx - 
 *  Assmbles modular components
 *  Connects local storage persistence using React hooks
 ********************************************************/
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import type { EmployeeData } from './types/employee';
 import type { JobPosting, JobFilterParams} from './types/job'; 
 import { defaultEmployee, STORAGE_KEY } from './data/defaultEmployee';
@@ -76,7 +76,7 @@ export const App: React.FC = () => {
         });
     }, [filters]);
 
-
+    //handlers
     const handleEditClick = () => {
         setTempData(employee);
         setIsEditing(true);
@@ -105,19 +105,19 @@ export const App: React.FC = () => {
             <Header />
 
             {/* Navigation Sub-Header / Tabs */}
-            <nav>
-                <div>
+            <nav className="tab-navigation">
+                <div className="tab-navigation-inner">
                     <button
-                      className={`btn ${activeTab === 'JOBS' ? 'btn-primary' : 'btn-secondary'}`}
+                      className={`btn ${activeTab === 'JOBS' ? 'btn-primary' : 'btn-secondary'} tab-btn`}
                       onClick={() => setActiveTab('JOBS')}
                     >
                         Explore Jobs ({mockJobs.length})
                     </button>
                     <button
-                      className={`btn ${activeTab === 'PROFILE' ? 'btn-primary' : 'btn-secondary'}`}
-                      onClick={() => activeTab('PROFILE')}
+                      className={`btn ${activeTab === 'PROFILE' ? 'btn-primary' : 'btn-secondary'} tab-btn`}
+                      onClick={() => setActiveTab('PROFILE')}
                     >
-                        Candiate Portal
+                        Candidate Portal
                     </button>
                 </div>
             </nav>
@@ -147,10 +147,10 @@ export const App: React.FC = () => {
                       onFilterChange={setFilters}
                       onReset={handleResetFilters}
                     />
-                    <div>
+                    <div className='results-count-bar'>
                         Showing <strong>{filteredJobs.length}</strong> of <strong>{mockJobs.length}</strong> positions                
                     </div>
-                    <JobList jobs={filteredJobs} onApply={handleApply}/>
+                    <JobList jobs={filteredJobs} onApply={handleApply} />
                   </div>
                 )}
             </main>

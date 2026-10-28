@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
                     <div className="footer-brand">
                         <span className="footer-logo-text">Sibanda Employment Agency</span>
                         <p className="footer-description">
-                            Enterprise Candidate Onboarding & Placement Platform
+                             Candidate Onboarding & Placement Platform
                         </p>
                     </div>
 

@@ -1,4 +1,5 @@
 /*******************************************************
+*  CJ 10/25/26
 *  Breaking UI into 3 components inside src/components 
 *  Header.tsx - Public navigation banner
 ********************************************************/
