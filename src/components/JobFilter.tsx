@@ -1,5 +1,5 @@
 /**************************************************************
-*  CJ 10/25/26
+*  CJ 10/28/26
 *  JobFilter.tsx
 *  For Search & Filer Controls
 *  Captures candidate seach inputs and passes filter criteria
@@ -16,13 +16,13 @@ interface JobFilterProps {
 
 export const JobFilter: React.FC<JobFilterProps> = ({ filters, onFilterChange, onReset }) => {
     return (
-        <div>
-            <h3>
+        <div className="card job-filter-card">
+            <h3 className="job-filter-title">
                 Search Open Positions
             </h3>
-            <div>
+            <div className="job-filter-grid">
                 {/* Search Input */}
-                <div>
+                <div className="form-group">
                     <label>Keyword Search:</label>
                     <input
                       type="text"
@@ -44,7 +44,7 @@ export const JobFilter: React.FC<JobFilterProps> = ({ filters, onFilterChange, o
                 </div>
 
                 {/* Employment Type Dropdown */}
-                <div>
+                <div className="form-group">
                     <label>Employment Type:</label>
                     <select
                       value={filters.type || 'ALL'}
@@ -64,9 +64,10 @@ export const JobFilter: React.FC<JobFilterProps> = ({ filters, onFilterChange, o
                 </div>
             </div>
 
-            <div>
+            <div className="job-filter-actions">
                 <button
                   type="button"
+                  className="btn btn-secondary btn-reset"
                   onClick={onReset}
                 >
                     Reset Filters
