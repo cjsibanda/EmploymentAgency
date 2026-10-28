@@ -3,7 +3,6 @@
 *  styles.css
 *  CSS styling
 *************************************************************/
-
 html,
 body {
     min-height: 100%;
@@ -383,6 +382,15 @@ body {
     font-size: 14px;
 }
 
-/
+/* Styling for Empty State Card */
+.job-empty-card {
+    text-align: center;
+    padding: 40px;
+    color: #99c9ff;
+}
 
+.job-empty-text {
+    color: #a0a0c0;
+}
+ 
 
