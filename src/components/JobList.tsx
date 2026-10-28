@@ -1,5 +1,5 @@
 /**************************************************************
-*  CJ 10/25/26
+*  CJ 10/28/26
 *  JobList.tsx
 *  Renders container/list
 *  manages the collections of job postings
@@ -18,21 +18,21 @@ interface JobListProps {
 export const JobList: React.FC<JobListProps> = ({ jobs, onApply }) => {
     if (jobs.length === 0) {
         return (
-            <div>
+            <div className="card job-empty-card">
                 <h3>No Open Positions Found</h3>
-                <p>
-                    Try changing search keywors or resetting job filters
+                <p className="job-empty-card">
+                    Try changing search keywords or resetting job filters.
                 </p>
             </div>
         );
     } 
 
     return (
-        <div>
+        <div className="job-list">
             {jobs.map((job) => (
                 <JobCard key={job.id} job={job} onApply={onApply} />
             ))}
         </div>
-    )
-}
+    );
+};
 
