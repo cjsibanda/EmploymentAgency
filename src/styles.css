@@ -1,3 +1,9 @@
+/******************************************
+*  CJ 10/28/26
+*  styles.css
+*  CSS styling
+*************************************************************/
+
 html,
 body {
     min-height: 100%;
@@ -276,4 +282,107 @@ body {
     padding: 6px 14px;
     font-size: 12px;
 }
+
+.results-count-bar {
+    margin-bottom: 16px;
+    color: #99c9ff;
+    font-size: 14px;
+}
+
+/* Styling for Job Cards */
+.job-card {
+  margin-bottom: 16px;
+  border-left: 2px solid #3939c5;
+  background-color: #121238;
+}
+
+.job-card.featured {
+  border-left: 4px solid #f1be32;
+}
+
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.job-card-title {
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  font-size: 18px;
+}
+
+.job-card-company {
+  color: #f1be32;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.job-card-dot {
+  color: #99c9ff;
+  margin: 0 8px;
+}
+
+.job-card-location {
+  color: #99c9ff;
+  font-size: 13px;
+}
+
+.job-badge {
+  background-color: #3939c5;
+  color: #f1be32;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  border: 1px solid #f1be32;
+}
+
+.job-badge.remote {
+    background-color: #0a0a23;
+}
+
+.job-card-description {
+    color: #d0d0e0;
+    font-size: 14px;
+    margin: 14px 0;
+    line-height: 1.5;
+}
+
+.job-card-requirements {
+    margin-bottom: 14px;
+}
+
+.job-card-req-title {
+    color: #99c9ff;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.job-card-req-list {
+    color: #a0a0c0;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.job-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-top: 1px solid #1a1a4a;
+    padding-top: 12px;
+}
+
+.job-card-salary {
+    color: #00e676;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/
+
 
