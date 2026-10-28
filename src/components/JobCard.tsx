@@ -7,47 +7,48 @@
 *  Provides the "Apply Now" button
 *************************************************************/
 import React from 'react';
-import type { JobPosting} from '../types/job';
+import type { JobPosting } from '../types/job';
 
 interface JobCardProps {
-    job: JobPosting;
-    onApply: (job: JobPosting) => void;
+  job: JobPosting;
+  onApply: (job: JobPosting) => void;
 }
 
 export const JobCard: React.FC<JobCardProps> = ({ job, onApply }) => {
-    return (
+  const cardClassName = `card job-card ${job.isFeatured ? 'featured' : ''}`;
+  const badgeClassName = `job-badge ${job.type === 'REMOTE' ? 'remote' : ''}`;
+
+  return (
+    <div className={cardClassName}>
+      <div className="job-card-header">
         <div>
-            <div>
-                <div>
-                    <h3>{job.title}</h3>
-                    <span>{job.companyName}</span>
-                    <span>.</span>
-                    <span>{job.location}</span>
-                    <span>{job.type}</span>
-                </div>
-
-                <p>{job.description}</p>
-
-                <div>
-                    <strong>Key Requirements:</strong>
-                    <ul>
-                        /* job requirements must be defined */
-                        {job.requirements.map((req, index) => (
-                            <li key={index}>{req}</li>
-                        ))}
-                    </ul>
-                </div>
-
-                <div>
-                    <span>
-                        ${job.salaryMin.toLocaleString()} - ${job.salaryMax.toLocaleString()} {job.currency} / yr
-                    </span>
-                    <button onClick={() => onApply(job)}>
-                        Apply Now
-                    </button>
-                </div>
-
-            </div>
+          <h3 className="job-card-title">{job.title}</h3>
+          <span className="job-card-company">{job.companyName}</span>
+          <span className="job-card-dot">•</span>
+          <span className="job-card-location">{job.location}</span>
         </div>
-    );
+        <span className={badgeClassName}>{job.type}</span>
+      </div>
+
+      <p className="job-card-description">{job.description}</p>
+
+      <div className="job-card-requirements">
+        <strong className="job-card-req-title">Key Requirements:</strong>
+        <ul className="job-card-req-list">
+          {job.requirements.map((req, index) => (
+            <li key={index}>{req}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="job-card-footer">
+        <span className="job-card-salary">
+          ${job.salaryMin.toLocaleString()} - ${job.salaryMax.toLocaleString()} {job.currency} / yr
+        </span>
+        <button className="btn btn-primary" onClick={() => onApply(job)}>
+          Apply Now
+        </button>
+      </div>
+    </div>
+  );
 };
