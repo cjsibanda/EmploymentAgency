@@ -13,11 +13,11 @@ import { JobCard } from './JobCard';
 
 interface JobListProps {
     jobs: JobPosting[];
-    appliedJobIds: strings[];
+    appliedJobIds: string[];
     onApply: (job: JobPosting) => void;
 }
 
-export const JobList: React.FC<JobListProps> = ({ jobs, onApply }) => {
+export const JobList: React.FC<JobListProps> = ({ jobs, appliedJobIds,  onApply }) => {
     if (jobs.length === 0) {
         return (
             <div className="card job-empty-card">
@@ -32,7 +32,11 @@ export const JobList: React.FC<JobListProps> = ({ jobs, onApply }) => {
     return (
         <div className="job-list">
             {jobs.map((job) => (
-                <JobCard key={job.id} job={job} onApply={onApply} />
+                <JobCard 
+                  key={job.id} 
+                  job={job}
+                  hasApplied={appliedJobIds.includes(job.id)} 
+                  onApply={onApply} />
             ))}
         </div>
     );
