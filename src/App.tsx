@@ -10,6 +10,7 @@ import type { JobPosting, JobFilterParams} from './types/job';
 import type { JobApplication } from './types/application';
 import { defaultEmployee, STORAGE_KEY } from './data/defaultEmployee';
 import { mockJobs } from './data/mockJobs';
+import { createJobApplication } from './utils/applicationFactory';
 import { Header } from './components/Header';
 import { ProfileView } from './components/ProfileView';
 import { ProfileForm } from './components/ProfileForm';
