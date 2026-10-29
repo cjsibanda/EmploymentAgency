@@ -1,20 +1,22 @@
 /**************************************************************
-*  CJ 10/25/26
+*  CJ 10/29/26
 *  JobCard.tsx
 *  Structured Information Rendering: 
 *  Displays core job data: Job Title, Company, Location, S Range
 *  Status Indicators: FULL_TIME, REMOTE, CONTRACT, PART_TIME...
 *  Provides the "Apply Now" button
+*  updated to accept hasApplied boolean prop
 *************************************************************/
 import React from 'react';
 import type { JobPosting } from '../types/job';
 
 interface JobCardProps {
   job: JobPosting;
+  hasApplied: boolean;
   onApply: (job: JobPosting) => void;
 }
 
-export const JobCard: React.FC<JobCardProps> = ({ job, onApply }) => {
+export const JobCard: React.FC<JobCardProps> = ({ job, hasApplied, onApply }) => {
   const cardClassName = `card job-card ${job.isFeatured ? 'featured' : ''}`;
   const badgeClassName = `job-badge ${job.type === 'REMOTE' ? 'remote' : ''}`;
 
@@ -45,9 +47,15 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onApply }) => {
         <span className="job-card-salary">
           ${job.salaryMin.toLocaleString()} - ${job.salaryMax.toLocaleString()} {job.currency} / yr
         </span>
-        <button className="btn btn-primary" onClick={() => onApply(job)}>
+        {hasApplied ? (
+          <span className="job-badge applied">
+            Applied ✓
+          </span>
+        ) : (
+         <button className="btn btn-primary" onClick={() => onApply(job)}>
           Apply Now
         </button>
+        )}
       </div>
     </div>
   );
