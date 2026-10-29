@@ -199,15 +199,28 @@ export const App: React.FC = () => {
                     <JobFilter
                       filters={filters}
                       onFilterChange={setFilters}
-                      onReset={handleResetFilters}
+                      onReset={() => setFilters(initialFilters)}
                     />
                     <div className='results-count-bar'>
                         Showing <strong>{filteredJobs.length}</strong> of <strong>{mockJobs.length}</strong> positions                
                     </div>
-                    <JobList jobs={filteredJobs} onApply={handleApply} />
+                    <JobList 
+                      jobs={filteredJobs}
+                      appliedJobIds={appliedJobIds}
+                      onApply={handleOpenApplyModal}
+                     />
                   </div>
                 )}
             </main>
+
+            {selectedJobForModal && (
+                <ApplicationModal
+                  job={selectedJobForModal}
+                  candidate={employee}
+                  onSubmit={handleSubmitApplication}
+                  onClose={handleCloseModal}
+                />
+            )}
 
             <Footer /> 
         </div>
