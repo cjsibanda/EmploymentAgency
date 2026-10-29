@@ -21,6 +21,8 @@ import './styles.css';
 
 type ActiveTab = 'PROFILE' | 'JOBS'; 
 
+const APPLICATIONS_KEY = 'sibanda_agency_applications';
+
 const initialFilters: JobFilterParams = {
     searchTerm: '',
     location: '',
@@ -53,6 +55,29 @@ export const App: React.FC = () => {
             console.error("Failed to save employee data:", error);
         }
     }, [employee]);
+
+    // Job Application State
+    const [applications, setApplications] = useState<JobApplication[]>(() => {
+        try {
+            const saved = localStorage.getItem(APPLICATIONS_KEY);
+            if (saved) return JSON.parse(saved);
+        } catch (e) {
+            console.error('Failed to load saved applications:', e);
+        }
+        return [];
+    });
+
+    const [selectedJobForModal, setSelectedJobForModal] = useState<JobPosting | null>(null);
+
+    useEffect(() => {
+        try {
+            localStorage.setItem(APPLICATIONS_KEY, JSON.stringify(applications));
+        } catch(error) {
+            console.error('Failed to save applications:', error);
+        }
+    }, [applications]);
+
+    const appliedJobIds = useMemo(() => applications.map((app) => app.jobId), [applications]);
     
 
     // Job Board Filtering State
