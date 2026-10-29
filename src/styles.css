@@ -239,6 +239,12 @@ body {
     font-family: monospace;
 }
 
+.job-badge.applied {
+    background-color: #00e676;
+    color: #0a0a23;
+    border-color: #00e676;
+}
+
 /* Styling for Sub-Header Navigation Tabs*/
 .tab-navigation {
     background-color: #0a0a23;
@@ -438,9 +444,9 @@ body {
 }
 
 .modal-subtitle {
-    color: #f1be32;
-    margin: 0 0 4px 0;
-    font-size: 20px;
+    color: #99c9ff;
+    font-size: 13px;
+    margin: 0;
 }
 
 .modal-close-btn {
