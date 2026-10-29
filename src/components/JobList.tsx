@@ -1,10 +1,11 @@
 /**************************************************************
-*  CJ 10/28/26
+*  CJ 10/29/26
 *  JobList.tsx
 *  Renders container/list
 *  manages the collections of job postings
 *  ...how sequence of cards is presented to user
 *  handles empty search states
+*  * updated to pass down appliedJobIds
 ***************************************************************/
 import React from 'react';
 import type { JobPosting } from '../types/job';
@@ -12,6 +13,7 @@ import { JobCard } from './JobCard';
 
 interface JobListProps {
     jobs: JobPosting[];
+    appliedJobIds: strings[];
     onApply: (job: JobPosting) => void;
 }
 
