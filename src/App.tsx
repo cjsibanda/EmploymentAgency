@@ -130,6 +130,29 @@ export const App: React.FC = () => {
     //    setFilters(initialFilters);
     //};
 
+    //Open Apply Modal logic
+    const handleOpenApplyModal = (job: JobPosting) => {
+        setSelectedJobForModal(job);
+    };
+
+    const handleCloseModal = () => {
+        setSelectedJobForModal(null);
+    };
+
+    const handleSubmitApplication = (jobId: string, coverLetter: string) => {
+        if (!selectedJobForModal) return;
+
+        // --> this is constructed vis factory utility
+        const newApplication = createJobApplication(
+            selectedJobForModal,
+            employee,
+            coverLetter
+        );
+
+        setApplications((prev) => [...prev, newApplication]);
+        setSelectedJobForModal(null);
+    }
+
     return (
         <div className="page">
             <Header />
