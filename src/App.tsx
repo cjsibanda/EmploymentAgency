@@ -1,5 +1,5 @@
 /*******************************************************
-*  CJ 10/28/26
+*  CJ 10/29/26
 *  App.tsx - 
 *  Assmbles modular components
 *  Connects local storage persistence using React hooks
@@ -7,6 +7,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import type { EmployeeData } from './types/employee';
 import type { JobPosting, JobFilterParams} from './types/job'; 
+import type { JobApplication } from './types/application';
 import { defaultEmployee, STORAGE_KEY } from './data/defaultEmployee';
 import { mockJobs } from './data/mockJobs';
 import { Header } from './components/Header';
@@ -14,6 +15,7 @@ import { ProfileView } from './components/ProfileView';
 import { ProfileForm } from './components/ProfileForm';
 import { JobFilter } from './components/JobFilter';
 import { JobList } from './components/JobList'; 
+import { ApplicationModal } from './components/ApplicationModal';
 import { Footer } from './components/Footer'; 
 import './styles.css';
 
@@ -51,6 +53,7 @@ export const App: React.FC = () => {
             console.error("Failed to save employee data:", error);
         }
     }, [employee]);
+    
 
     // Job Board Filtering State
     const [filters, setFilters] = useState<JobFilterParams>(initialFilters);
@@ -92,13 +95,15 @@ export const App: React.FC = () => {
         setIsEditing(false);
     };
 
-    const handleApply = (job: JobPosting) => {
-        alert(`Application submitted successfully for ${job.title} at ${job.companyName}!`);
-    };
+    //const handleApply = (job: JobPosting) => {
+    //    alert(`Application submitted successfully for ${job.title} at ${job.companyName}!`);
+    //};
 
-    const handleResetFilters = () => {
-        setFilters(initialFilters);
-    };
+    
+
+    //const handleResetFilters = () => {
+    //    setFilters(initialFilters);
+    //};
 
     return (
         <div className="page">
