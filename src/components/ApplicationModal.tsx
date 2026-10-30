@@ -15,3 +15,17 @@ interface ApplicationModalProps {
     onSubmit: (jobID: string, coverLetter: string) => void;
     onClose: () => void;
 }
+
+export const ApplicationModal: React.FC<ApplicationModalProps> = ({
+    job,
+    candidate,
+    onSubmit,
+    onclose,
+}) => {
+    const [coverLetter, setCoverLetter] = useState<string>('');
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        onSubmit(job.id, coverLetter);
+    };
+}
