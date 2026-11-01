@@ -239,6 +239,35 @@ body {
     font-family: monospace;
 }
 
+/* Status Badge Styling*/
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.submitted {
+    background-color: #0a0a23;
+    color: #99c9ff;
+    border: 1px solid #99c9ff;
+}
+
+.status-badge.under-review {
+    background-color: #3939c5;
+    color: #f1be32;
+    border: 1px solid #f1be32;
+}
+
+.status-badge.accepted {
+    background-color: #00e676;
+    color: #0a0a23;
+    border: 1px solid #00e676;
+}
+
+
 .job-badge.applied {
     background-color: #00e676;
     color: #0a0a23;
