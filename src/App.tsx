@@ -1,8 +1,10 @@
 /*******************************************************
-*  CJ 10/29/26
+*  CJ 11/1/26
 *  App.tsx - 
 *  Assmbles modular components
 *  Connects local storage persistence using React hooks
+* * Updating to incluse 'APPLICATIONS' in ActiveTab
+* * ... and render <ApplicationsView>
 ********************************************************/
 import React, { useState, useEffect, useMemo } from 'react';
 import type { EmployeeData } from './types/employee';
@@ -17,10 +19,11 @@ import { ProfileForm } from './components/ProfileForm';
 import { JobFilter } from './components/JobFilter';
 import { JobList } from './components/JobList'; 
 import { ApplicationModal } from './components/ApplicationModal';
+import { ApplicationsView } from './components/ApplicationsView';
 import { Footer } from './components/Footer'; 
 import './styles.css';
 
-type ActiveTab = 'PROFILE' | 'JOBS'; 
+type ActiveTab = 'PROFILE' | 'JOBS' | 'APPLCATIONS'; 
 
 const APPLICATIONS_KEY = 'sibanda_agency_applications';
 
