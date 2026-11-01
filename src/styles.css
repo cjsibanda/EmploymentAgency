@@ -471,6 +471,61 @@ body {
     padding-top: 16px;
 }
 
+/* Applcations View Component Styling*/
+.application-card {
+    margin-bottom: 16px;
+    background-color: #121238;
+    border-left: 3px solid #f1be32;
+}
+
+.application-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-bottom: 1px solid #1a1a4a;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.application-title {
+    color: #ffffff;
+    margin: 0 0 4px 0;
+    font-size: 18px;
+}
+
+.application-company {
+    color: #1fbe32;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.application-date {
+    color: #99c9ff;
+    font-size: 13px;
+}
+
+.application-cover-letter {
+    background-color: #0a0a23;
+    border: 1px solid #1a1a4a;
+    border-radius: 4px;
+    padding: 12px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #d0d0e0;
+}
+
+.application-cover-letter-title {
+    color: #99c9ff;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: block;
+}
+
+
+
 
 
 
