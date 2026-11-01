@@ -10,10 +10,29 @@ import React from 'react';
 import type { JobApplication } from '../types/application';
 
 interface ApplicationViewProps {
-    applcations: JobApplication[];
+    applications: JobApplication[];
     onExploreJobs: () => void;
 }
 
-explore const ApplicationsView: React.FC<ApplicationViewProps> = ({
-    ///--> 
-})
+export const ApplicationsView: React.FC<ApplicationViewProps> = ({
+    applications,
+    onExploreJobs,
+}) => {
+    if (applications.length === 0) {
+        return (
+            <div className="card job-empty-card">
+                <h3>No Submitted Applications Yet</h3>
+                <p>
+                    You have not submitted any job applications yet. Look at the Job board for roles
+                </p>
+                <button
+                    className="btn btn-primary"
+                    onClick={onExploreJobs}
+                    style={{ marginTop: '16px' }}
+                >
+                    Explore Open Positions
+                </button>
+            </div>
+        );
+    }
+}
