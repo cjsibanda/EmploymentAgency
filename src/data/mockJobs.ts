@@ -10,11 +10,11 @@ export const mockJobs: JobPosting[] = [
     {
         id: 'job-101',
         title: 'Senior Cook',
-        companyName: 'Mutare Solutions',
+        companyName: 'Good Food Solutions',
         location: 'Toronto, ON',
         type: 'FULL_TIME',
-        salaryMin: 60000,
-        salaryMax: 150000,
+        salaryMin: 40000,
+        salaryMax: 90000,
         currency: 'CAD',
         description: 'Cooking good food in the kitchen and supervising junior cooks',
         requirements: [
@@ -49,7 +49,7 @@ export const mockJobs: JobPosting[] = [
     companyName: 'Sibanda Enterprise Systems',
     location: 'Toronto, ON',
     type: 'CONTRACT',
-    salaryMin: 35000,
+    salaryMin: 65000,
     salaryMax: 200000,
     currency: 'CAD',
     description: 'Building UI component libraries and micro-frontends using React, TypeScript, and Tailwind CSS.',
@@ -68,7 +68,7 @@ export const mockJobs: JobPosting[] = [
     location: 'Mississauga, ON',
     type: 'FULL_TIME',
     salaryMin: 50000,
-    salaryMax: 300000,
+    salaryMax: 100000,
     currency: 'CAD',
     description: 'Inspect, troubleshoot, repair, and perform preventative maintenance',
     requirements: [
