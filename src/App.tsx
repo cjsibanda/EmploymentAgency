@@ -23,7 +23,7 @@ import { ApplicationsView } from './components/ApplicationsView';
 import { Footer } from './components/Footer'; 
 import './styles.css';
 
-type ActiveTab = 'PROFILE' | 'JOBS' | 'APPLCATIONS'; 
+type ActiveTab = 'PROFILE' | 'JOBS' | 'APPLICATIONS'; 
 
 const APPLICATIONS_KEY = 'sibanda_agency_applications';
 
@@ -171,7 +171,7 @@ export const App: React.FC = () => {
                         Explore Jobs ({mockJobs.length})
                     </button>
                     <button
-                      className={`btn ${activeTab === 'APPLCATIONS' ? 'btn-primary' : 'btn-secondary'} tab-btn`}
+                      className={`btn ${activeTab === 'APPLICATIONS' ? 'btn-primary' : 'btn-secondary'} tab-btn`}
                       onClick={() => setActiveTab('APPLICATIONS')}
                     >
                         My Applications ({applications.length})
