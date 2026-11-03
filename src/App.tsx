@@ -186,7 +186,7 @@ export const App: React.FC = () => {
             </nav>
 
             <main className="main-content">
-                {activeTab === 'PROFILE' ? (
+                {activeTab === 'PROFILE' && (
                   <div className="card">
                       <h2>Employee Sign-Up Profile</h2>
                       {!isEditing ? (
@@ -203,7 +203,8 @@ export const App: React.FC = () => {
                           />
                       )}
                   </div>
-                ) : (
+                )} 
+                {activeTab === 'JOBS' && (
                   <div>
                     <JobFilter
                       filters={filters}
@@ -219,6 +220,13 @@ export const App: React.FC = () => {
                       onApply={handleOpenApplyModal}
                      />
                   </div>
+                )}
+
+                {activeTab === 'APPLCATIONS' && (
+                    <ApplicationsView
+                      applications={applications}
+                      onExploreJobs={() => setActiveTab('JOBS')}
+                    />
                 )}
             </main>
 
