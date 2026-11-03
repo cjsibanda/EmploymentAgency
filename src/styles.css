@@ -553,7 +553,19 @@ body {
     display: block;
 }
 
+/* Employer & Recruiter Section styling.. */
+.role-switecher-bar {
+    background-color: #050517;
+    border-bottom: 1px solid #1a1a4a;
+    padding: 8px 0;
+}
 
+.role-indicator {
+    font-size: 12px;
+    color: #99c9ff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
 
 

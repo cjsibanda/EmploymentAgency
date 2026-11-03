@@ -8,3 +8,12 @@
 import React, { useState } from 'react';
 import type { JobPosting, EmploymentType } from '../types/job';
 
+interface CreateJobModalProps {
+    onAddJob: (newJob: JobPosting) => void;
+    onClose: () => void;
+}
+
+export const CreateJobModal: React.FC<CreateJobModalProps> = ({
+    ////-->>....
+    ////-->>....
+})
