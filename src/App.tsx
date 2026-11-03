@@ -171,6 +171,12 @@ export const App: React.FC = () => {
                         Explore Jobs ({mockJobs.length})
                     </button>
                     <button
+                      className={`btn ${activeTab === 'APPLCATIONS' ? 'btn-primary' : 'btn-secondary'} tab-btn`}
+                      onClick={() => setActiveTab('APPLICATIONS')}
+                    >
+                        My Applications ({applications.length})
+                    </button>
+                    <button
                       className={`btn ${activeTab === 'PROFILE' ? 'btn-primary' : 'btn-secondary'} tab-btn`}
                       onClick={() => setActiveTab('PROFILE')}
                     >
