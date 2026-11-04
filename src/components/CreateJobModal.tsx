@@ -13,7 +13,40 @@ interface CreateJobModalProps {
     onClose: () => void;
 }
 
-export const CreateJobModal: React.FC<CreateJobModalProps> = ({
-    ////-->>....
-    ////-->>....
-})
+export const CreateJobModal: React.FC<CreateJobModalProps> = 
+({onAddJob, onClose }) => {
+    const [title, setTitle] = useState('');
+    const [companyName, setCompanyName] = useState('');
+    const [location, setLocation] = useState('');
+    const [type, setType] = useState<EmploymentType>('FULL_TIME');
+    const [salaryMin, setSalaryMin] = useState<number>(75000);
+    const [salaryMax, setSalaryMax] = useState<number>(110000);
+    const [description, setDescription] = useState('');
+    const [requirementsText, setRequirementsText] = useState('');
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const requirements = requirementsText
+           .split('\n')
+           .map((req) => req.trim())
+           .filter((req) => req.length > 0);
+        
+        const createdJob: JobPosting = {
+            id: `job-${Date.now()}`,
+            title,
+            companyName,
+            location,
+            type,
+            salaryMin,
+            salaryMax,
+            currency: 'CAD',
+            description,
+            requirements: requirements.length > 0 ? requirements : ['General technical experience'],
+            isFeatured: false,
+            postedDate: new Date().toISOString().split('T')[0],
+        };
+
+        onAddJob(createdJob);
+    };
+}
