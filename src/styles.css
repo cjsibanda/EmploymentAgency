@@ -567,6 +567,34 @@ body {
     letter-spacing: 0.5px;
 }
 
+.role-toggle-btn {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* Recruiter Dashboard styling */
+.employer-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.employer-title {
+    color: #f1be32;
+    margin: 0;
+    font-size: 22px;
+}
+
+.application-review-card {
+    background-color: #121238;
+    border-left: 3px solid #3939c5;
+    margin-bottom: 16px;
+}
+
 
 
 
