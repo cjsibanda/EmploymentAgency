@@ -49,4 +49,27 @@ export const CreateJobModal: React.FC<CreateJobModalProps> =
 
         onAddJob(createdJob);
     };
+
+    return (
+        <div className="modal-backdrop" onClick={onClose}>
+            <div className="modal-card">
+                <div className='modal-header'>
+                    <div>
+                        <h3>Post a New Job Opening</h3>
+                        <p>Publish a Position to the Agency Job Board</p>
+                    </div>
+                    <button className="modal-close-btn">
+                        Close 
+                    </button>
+                </div>
+
+                <form onSubmit={handeSubmit}>
+                    <div>
+                        //...
+                        //...
+                    </div>
+                </form>
+            </div>
+        </div>
+    )
 }
