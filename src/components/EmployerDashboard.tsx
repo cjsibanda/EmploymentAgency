@@ -12,3 +12,15 @@ interface EmployerDashboardProps {
     onUpdateStatus: (applicationId: string, newStatus: ApplicationStatus) => void;
     onOpenCreateJobModal: () => void;
 }
+
+export const EmployerDashboard: React.FC<EmployerDashboardProps> = ({
+    applications,
+    onUpdateStatus,
+    onOpenCreateJobModal,
+}) => {
+    return (
+        <div>
+            //return something....
+        </div>
+    )
+}
