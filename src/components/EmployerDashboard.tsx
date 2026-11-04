@@ -7,4 +7,8 @@
 import React from 'react';
 import type { JobApplication, ApplicationStatus } from '../types/application';
 
-///....
+interface EmployerDashboardProps {
+    applications: JobApplication[];
+    onUpdateStatus: (applicationId: string, newStatus: ApplicationStatus) => void;
+    onOpenCreateJobModal: () => void;
+}
