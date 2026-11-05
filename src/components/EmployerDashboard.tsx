@@ -1,5 +1,5 @@
 /*****************************************************************
-*  CJ 11/4/26
+*  CJ 11/5/26
 *  EmployerDashboard.tsx - 
 *  Dashboard for Recruiters to review Applications
 *  Recruiters can: inspect pitches, updated application statuses
@@ -64,12 +64,37 @@ export const EmployerDashboard: React.FC<EmployerDashboardProps> = ({
                             </div>
                         </div>
 
-                        //
+                        <div className="applicant-info-grid">
+                            <div className='applicant-info-item'>
+                                <span className='applicant-info-label'>Candidate Name:</span>
+                                <strong>{app.candidateName}</strong>
+                            </div>
+                            <div className='applicant-info-item'>
+                                <span className="applicant-info-label">Email Address:</span>
+                                {app.candidateEmail}
+                            </div>
+                            <div className='applicant-info-item'>
+                                <span className='applicant-info-label'>Phone:</span>
+                                {app.candidatePhone}
+                            </div>
+                            <div className='applicant-info-item'>
+                                <span className="applicant-info-label">Submitted On:</span>
+                                {app.submittedAt}
+                            </div>
+                        </div>
+
+                        {app.coverLetter && (
+                            <div className="application-cover-letter">
+                                <span className="application-cover-letter-title">
+                                    Candidate Pitch / cover Letter:
+                                </span>
+                                <p>{app.coverLetter}</p>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
           )}
- 
         </div>
-    )
-}
+     );
+};
