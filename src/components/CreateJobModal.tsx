@@ -64,9 +64,41 @@ export const CreateJobModal: React.FC<CreateJobModalProps> =
                 </div>
 
                 <form onSubmit={handeSubmit}>
-                    <div>
-                        //...
-                        //...
+                    <div className='form-group'>
+                        <label>Job Title:</label>
+                        <input 
+                          type="text"
+                          required
+                          placeholder='e.g. Senior Full-Stack Developer'
+                          value={title}
+                          onChange={(e) => setTitle(e.target.value)}
+                        />
+
+                        <div className="job-filer-grid">
+                            <div className="form-group">
+                                <label>Company Name:</label>
+                                <input 
+                                  type="text"
+                                  required
+                                  placeholder='e.g. Kwekwe Solutions'
+                                  value={companyName}
+                                  onChange={(e) => setCompanyName(e.target.value)}
+                                />
+                            </div>
+
+                            <div className='form-group'>
+                                <label>Location:</label>
+                                <input
+                                  type="text"
+                                  required
+                                  placeholder='e.g Calgary, AB or Remote'
+                                  value={location}
+                                  onChange={(e) => setLocation(e.target.value)}
+                                />
+                            </div>
+                        </div>
+
+                        
                     </div>
                 </form>
             </div>
