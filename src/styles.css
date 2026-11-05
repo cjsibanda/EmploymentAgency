@@ -595,7 +595,40 @@ body {
     margin-bottom: 16px;
 }
 
+.status-select {
+    background-color: #0a0a23;
+    color: #f1be32;
+    border: 1px solid #f1be32;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
+.applicant-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    background-color: #0a0a23;
+    padding: 12px;
+    border-radius: 4px;
+    margin: 12px;
+    border: 1px solid #1a1a4a;
+}
+
+.applicant-info-item {
+    font-size: 13px;
+    color: #d0d0e0;
+}
+
+.applicant-info-label {
+    color: #99c9ff;
+    font-weight: bold;
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+}
 
 
 
