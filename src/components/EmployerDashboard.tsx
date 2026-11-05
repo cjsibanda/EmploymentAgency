@@ -29,6 +29,46 @@ export const EmployerDashboard: React.FC<EmployerDashboardProps> = ({
                 + Post New Job Opening
             </button>
           </div>
+
+          {applications.length === 0 ? (
+            <div className='card job-empty-card'>
+              <h3>No Applications Submitted Yet</h3>
+              <p className='job-empty-text'>When candidates apply for open positions, their profiles and pitches will appear here.</p>
+            </div>
+          ) : (
+            <div>
+                <div className='results-count-bar'>
+                    Managing <strong>{applications.length}</strong> total candidate submissions
+                </div>
+
+                {applications.map((app) => (
+                    <div key={app.id} className='card application-review-card'>
+                        <div className="application-card-header">
+                            <div>
+                                <h3 className='application-title'>{app.jobTitle}</h3>
+                                <span className='application-company'>{app.companyName}</span>
+                            </div>
+                            <div>
+                               <label className="applicant-info-label">Review Status</label>
+                               <select 
+                                 className='status-select'
+                                 value={app.status}
+                                 onChange={(e) => onUpdateStatus(app.id, e.target.value as ApplicationStatus)}
+                               >
+                                <option value="SUBMITTED">Submitted</option>
+                                <option value="UNDER_REVIEW">Under Review</option>
+                                <option value="INTERVIEWING">Interviewing</option>
+                                <option value="ACCEPTED">Accepted</option>
+                                <option value="REJECTED">Rejected</option>
+                               </select> 
+                            </div>
+                        </div>
+
+                        //
+                    </div>
+                ))}
+            </div>
+          )}
  
         </div>
     )
