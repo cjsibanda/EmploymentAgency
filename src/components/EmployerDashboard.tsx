@@ -19,8 +19,17 @@ export const EmployerDashboard: React.FC<EmployerDashboardProps> = ({
     onOpenCreateJobModal,
 }) => {
     return (
-        <div>
-            //return something....
+        <div className="employer-dashboard">
+          <div className='employer-header-actions'>
+            <div>
+                <h2 className="employer-title">Employer Recruiter Dashboard</h2>
+                <p className='job-empty-text'>Review incoming candidate applications and manage hiring pipelines.</p>
+            </div>
+            <button className='btn btn-primary' onClick={onOpenCreateJobModal} >
+                + Post New Job Opening
+            </button>
+          </div>
+ 
         </div>
     )
 }
