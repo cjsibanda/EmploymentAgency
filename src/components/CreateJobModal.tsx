@@ -63,7 +63,7 @@ export const CreateJobModal: React.FC<CreateJobModalProps> =
                     </button>
                 </div>
 
-                <form onSubmit={handeSubmit}>
+                <form onSubmit={handleSubmit}>
                     <div className='form-group'>
                         <label>Job Title:</label>
                         <input 
