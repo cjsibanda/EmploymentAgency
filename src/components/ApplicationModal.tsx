@@ -61,7 +61,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                   <label>Cover Letter / Pitch (Optional):</label>
                   <textarea
                     rows={5}
-                    placeholder="Explain why you are a great fit for this position..."
+                    placeholder="Explain why you are a good fit for this position..."
                     value={coverLetter}
                     onChange={(e) => setCoverLetter(e.target.value)}
                   />
