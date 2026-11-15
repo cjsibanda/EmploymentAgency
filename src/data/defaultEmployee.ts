@@ -9,8 +9,8 @@ export const STORAGE_KEY = "employee_profile";
 
 export const defaultEmployee: EmployeeData = {
     name: "CJ Sibanda",
-    employeeID: 102017,
-    jobTitle: "Operations?",
+    employeeID: 1020178,
+    jobTitle: "Greeter",
     imageUrl: "https://anesusibanda.com", 
-    parkingLevel: 2,  
+    parkingLevel: 1,  
 };
