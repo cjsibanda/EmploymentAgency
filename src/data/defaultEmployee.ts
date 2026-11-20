@@ -1,5 +1,5 @@
 /**********************************************************
-* CJ 10/25/26
+* CJ 11/20/26
 *  defaultEmployee.ts: for baseline data and local storage
 ***********************************************************/
 
@@ -9,8 +9,8 @@ export const STORAGE_KEY = "employee_profile";
 
 export const defaultEmployee: EmployeeData = {
     name: "CJ Sibanda",
-    employeeID: 1020178,
+    employeeID: 102010,
     jobTitle: "Greeter",
     imageUrl: "https://anesusibanda.com", 
-    parkingLevel: 1,  
+    parkingLevel: 2,  
 };
